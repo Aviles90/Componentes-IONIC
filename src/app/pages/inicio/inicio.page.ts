@@ -43,6 +43,11 @@ export class InicioPage implements OnInit {
       icon: 'checkmark-circle',
       name: 'Checks',
       redirectTo: '/check'
+    },
+    {
+      icon: 'calendar',
+      name: 'DateTime',
+      redirectTo: '/date-time'
     }
   ]
 
