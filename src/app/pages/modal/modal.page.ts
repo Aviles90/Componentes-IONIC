@@ -9,6 +9,7 @@ import { ModalInfoPage } from '../modal-info/modal-info.page';
 })
 export class ModalPage implements OnInit {
 
+
   constructor(private modalController: ModalController) { }
 
   ngOnInit() {
@@ -16,9 +17,20 @@ export class ModalPage implements OnInit {
 
   async mostrarModal(){
     const modal = await this.modalController.create({
-      component: ModalInfoPage
+      component: ModalInfoPage,
+      componentProps: {
+        nombre: 'Aviles',
+        pais: 'México'
+      }
     });
     await modal.present();
+    
+    // const { data } = await modal.onDidDismiss();
+    const { data } = await modal.onWillDismiss();
+
+    console.log(data);
+    
+
   }
 
 }
